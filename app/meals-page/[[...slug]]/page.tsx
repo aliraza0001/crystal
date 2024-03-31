@@ -2,7 +2,7 @@ import { MealList } from "@/components/MealList";
 import { title } from "@/components/primitives";
 import { getCategoryDetails } from "@/config/services/category";
 import { MealsPageProps } from "@/types";
-
+// @ts-ignore
 const MealsPage: React.FC<MealsPageProps> = async ({ params: { slug } }) => {
   const category = slug ? slug[0] : "Chicken";
   const meals = await getCategoryDetails(category);

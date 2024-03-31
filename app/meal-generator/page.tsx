@@ -2,7 +2,7 @@ import { MealList } from "@/components/MealList";
 import { title } from "@/components/primitives";
 import { getRandomMeal } from "@/config/services/meals";
 
-const MealGenerator: React.FC = async () => {
+const MealGenerator = async () => {
   const meal = await getRandomMeal();
   return (
     <div>

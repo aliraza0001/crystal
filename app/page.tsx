@@ -3,7 +3,7 @@ import Link from "next/link";
 const HomePage = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-8">Welcome to Our Meal App</h1>
+      <h1 className="text-4xl font-bold mb-8">Welcome to the Meal App</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Section 1: Menu */}
         <Link href="/menu">
