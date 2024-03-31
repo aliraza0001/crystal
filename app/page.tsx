@@ -1,51 +1,34 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import Link from "next/link";
 
-export default function Home() {
-	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-			<div className="inline-block max-w-lg text-center justify-center">
-				<h1 className={title()}>Make&nbsp;</h1>
-				<h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-				<br />
-				<h1 className={title()}>
-					websites regardless of your design experience.
-				</h1>
-				<h2 className={subtitle({ class: "mt-4" })}>
-					Beautiful, fast and modern React UI library.
-				</h2>
-			</div>
+const HomePage = () => {
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-bold mb-8">Welcome to Our Meal App</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Section 1: Menu */}
+        <Link href="/menu">
+          <div className="bg-gray-800 shadow-md rounded-md p-6 transition duration-300 transform hover:scale-105">
+            <h2 className="text-xl font-bold mb-4">Menu</h2>
+            <p>Explore our delicious menu and find your favorite meals.</p>
+          </div>
+        </Link>
+        {/* Section 2: My Favourites */}
+        <Link href="/my-favourites">
+          <div className="bg-gray-800 shadow-md rounded-md p-6 transition duration-300 transform hover:scale-105">
+            <h2 className="text-xl font-bold mb-4">My Favourites</h2>
+            <p>View all your favorite meals in one place.</p>
+          </div>
+        </Link>
+        {/* Section 3: Meal Generator */}
+        <Link href="/meal-generator">
+          <div className="bg-gray-800 shadow-md rounded-md p-6 transition duration-300 transform hover:scale-105">
+            <h2 className="text-xl font-bold mb-4">Meal Generator</h2>
+            <p>Feeling adventurous? Let us surprise you with a random meal!</p>
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
-			<div className="flex gap-3">
-				<Link
-					isExternal
-					href={siteConfig.links.docs}
-					className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
-				>
-					Documentation
-				</Link>
-				<Link
-					isExternal
-					className={buttonStyles({ variant: "bordered", radius: "full" })}
-					href={siteConfig.links.github}
-				>
-					<GithubIcon size={20} />
-					GitHub
-				</Link>
-			</div>
-
-			<div className="mt-8">
-				<Snippet hideSymbol hideCopyButton variant="flat">
-					<span>
-						Get started by editing <Code color="primary">app/page.tsx</Code>
-					</span>
-				</Snippet>
-			</div>
-		</section>
-	);
-}
+export default HomePage;
